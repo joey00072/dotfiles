@@ -14,6 +14,17 @@ git init
 git remote add origin  https://github.com/joey00072/dotfiles
 git pull origin master
 
+
+
+if [ -f "$HOME/.vimrc" ]; then
+    echo "vimrc already exits"
+    echo "moving ~/.vimrc to ~/.vimrc_old"
+    mv $HOME/.vimrc $HOME/.vimrc_old
+fi
+
+ln -s $HOME/.dotfiles/.vimrc $HOME/.vimrc
+
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 
 echo "\n *** DONE *** \n"
