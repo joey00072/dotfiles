@@ -20,19 +20,6 @@ git remote add origin  https://github.com/joey00072/dotfiles
 git pull origin master
 
 
-# vim installation
-if [ -f "$HOME/.vimrc" ]; then
-    echo "vimrc already exits"
-    echo "moving ~/.vimrc to ~/.vimrc_old"
-    mv $HOME/.vimrc $HOME/.vimrc_old
-fi
-
-ln -s $HOME/.dotfiles/.vimrc $HOME/.vimrc
-
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-vim +'PlugInstall --sync' +qa
-
 
 # zshrc installation
 if [ -f "$HOME/.zshrc" ]; then
@@ -54,6 +41,19 @@ if [ -f "$HOME/.p10k.zsh" ]; then
     echo "moving ~/.p10k.zsh to ~/.p10k.zsh_old"
     mv $HOME/.zshrc $HOME/.zshrc_old
 fi
+
+# vim installation
+if [ -f "$HOME/.vimrc" ]; then
+    echo "vimrc already exits"
+    echo "moving ~/.vimrc to ~/.vimrc_old"
+    mv $HOME/.vimrc $HOME/.vimrc_old
+fi
+
+ln -s $HOME/.dotfiles/.vimrc $HOME/.vimrc
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+vim +'PlugInstall --sync' +qa
 
 
 
