@@ -121,6 +121,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH=$PATH:/Users/shubhamc/.yarn/bin
+export PATH="/Users/shubhamc/go/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -146,4 +147,7 @@ unset __conda_setup
 alias wvm="ssh joey@127.0.0.1 -p 2222"
 alias pt=pytest
 alias rr="rm -rvf"
-alias expk="export KUBECONFIG"
+alias rc="conda deactivate && conda active base"
+alias g="grep"
+alias get_ruff="cp $HOME/.dotfiles/snippets/pyproject.toml ."
+export PATH=$PATH:/Users/shubhamc/.spicetify31990
