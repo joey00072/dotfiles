@@ -20,6 +20,18 @@ git remote add origin  https://github.com/joey00072/dotfiles
 git pull origin master
 
 
+# nvim installation
+if [ -f "$HOME/.config/nvim" ]; then
+    echo "nvim already exits"
+    echo "moving ~/.config/nvim/ to ~/.config/nvim_old"
+    mv $HOME/.config/nvim $HOME/.config/nvim_old
+fi
+
+ln -s $HOME/.config/nvim $HOME/.config/nvim
+
+echo "NVIM Installed"
+
+
 
 # zshrc installation
 if [ -f "$HOME/.zshrc" ]; then
@@ -30,14 +42,6 @@ fi
 
 ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
-# nvim installation
-if [ -f "$HOME/.config/nvim" ]; then
-    echo "nvim already exits"
-    echo "moving ~/.config/nvim/ to ~/.config/nvim_old"
-    mv $HOME/.config/nvim $HOME/.config/nvim_old
-fi
-
-ln -s $HOME/.config/nvim $HOME/.config/nvim_old
 
 # zsh autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions

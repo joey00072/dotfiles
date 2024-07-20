@@ -146,12 +146,14 @@ alias rr="rm -rvf"
 alias rc="conda deactivate && conda active base"
 alias g="grep"
 alias get_ruff="cp $HOME/.dotfiles/snippets/pyproject.toml ."
-#alias pip="uv pip"
+alias pip="uv pip"
+alias xc="aichat"
+alias xx="aichat -e"
 
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH=$PATH:/Users/joey/.yarn/bin
 export PATH="/Users/joey/go/bin:$PATH"
-
+export PATH="$HOME/.nvm/versions/node/v22.4.1/bin:$PATH"
 export PATH=$HOME/.cargo/bin:$PATH
 . "$HOME/.cargo/env"
 
@@ -162,3 +164,5 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 
 [[ -s "/home/joey/.gvm/scripts/gvm" ]] && source "/home/joey/.gvm/scripts/gvm"
+export MODULAR_HOME="/home/joey/.modular"
+export PATH="/home/joey/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
