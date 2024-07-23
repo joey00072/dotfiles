@@ -20,6 +20,11 @@ git remote add origin  https://github.com/joey00072/dotfiles
 git pull origin master
 
 
+if [ -f "$HOME/.config" ]; then
+  mkdir $HOME/.config/
+fi
+
+
 # nvim installation
 if [ -f "$HOME/.config/nvim" ]; then
     echo "nvim already exits"
