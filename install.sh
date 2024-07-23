@@ -24,7 +24,7 @@ git pull origin master
 if [ -f "$HOME/.config/nvim" ]; then
     echo "nvim already exits"
     echo "moving ~/.config/nvim/ to ~/.config/nvim_old"
-    mv $HOME/.config/nvim $HOME/.config/nvim_old
+    mv $HOME/.dotfiles/nvim $HOME/.config/nvim_old
 fi
 
 ln -s $HOME/.dotfiles/nvim $HOME/.config/nvim
