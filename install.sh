@@ -27,7 +27,7 @@ if [ -f "$HOME/.config/nvim" ]; then
     mv $HOME/.config/nvim $HOME/.config/nvim_old
 fi
 
-ln -s $HOME/.dotnet/nvim $HOME/.config/nvim
+ln -s $HOME/.dotfiles/nvim $HOME/.config/nvim
 
 echo "NVIM Installed"
 
