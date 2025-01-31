@@ -149,6 +149,7 @@ alias get_ruff="cp $HOME/.dotfiles/snippets/pyproject.toml ."
 alias pip="uv pip"
 alias xc="aichat"
 alias xx="aichat -e"
+alias tmux="tmux -u"
 
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH=$PATH:/Users/joey/.yarn/bin
@@ -161,8 +162,19 @@ export PATH=$HOME/.cargo/bin:$PATH
 source /home/joey/.venv/bin/activate
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
+eval "$(zoxide init zsh)"
 
 [[ -s "/home/joey/.gvm/scripts/gvm" ]] && source "/home/joey/.gvm/scripts/gvm"
 export MODULAR_HOME="/home/joey/.modular"
 export PATH="/home/joey/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
+
+. "$HOME/.local/bin/env"
+export RUSTC_WRAPPER=$(which sccache)
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/joey/.cache/lm-studio/bin"
+export PATH=/usr/local/cuda-12.6/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-12.6/lib64:$LD_LIBRARY_PATH
+export PATH="$PATH:/usr/share/windsurf"
+export PATH="$PATH:/home/joey/.modular/bin"
+
