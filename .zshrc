@@ -140,41 +140,75 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-alias wvm="ssh joey@127.0.0.1 -p 2222"
-alias pt=pytest
-alias rr="rm -rvf"
-alias rc="conda deactivate && conda active base"
-alias g="grep"
-alias get_ruff="cp $HOME/.dotfiles/snippets/pyproject.toml ."
-alias pip="uv pip"
-alias xc="aichat"
-alias xx="aichat -e"
-alias tmux="tmux -u"
-
+# ===========================================
+# PATH Configuration
+# ===========================================
+# System paths
 export PATH="/opt/homebrew/bin:$PATH"
-export PATH=$PATH:/Users/joey/.yarn/bin
-export PATH="/Users/joey/go/bin:$PATH"
+export PATH="/usr/local/cuda-12.6/bin:$PATH"
+export PATH="/usr/share/windsurf:$PATH"
+
+# User paths
+export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/.nvm/versions/node/v22.4.1/bin:$PATH"
-export PATH=$HOME/.cargo/bin:$PATH
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.cache/lm-studio/bin:$PATH"
+export PATH="$HOME/.modular/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+# ===========================================
+# Environment Variables
+# ===========================================
+export MODULAR_HOME="$HOME/.modular"
+export RUSTC_WRAPPER="$(which sccache)"
+export LD_LIBRARY_PATH="/usr/local/cuda-12.6/lib64:$LD_LIBRARY_PATH"
+
+# ===========================================
+# Shell Initialization
+# ===========================================
+if command -v brew &> /dev/null; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+eval "$(zoxide init zsh)"
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+. "$HOME/.local/bin/env"
 . "$HOME/.cargo/env"
 
+# ===========================================
+# Aliases
+# ===========================================
+# Development
+alias pt="pytest"
+alias get_ruff="cp $HOME/.dotfiles/snippets/pyproject.toml ."
+alias pip="uv pip"
+alias vv="source ~/.venv/bin/activate"
 
-source /home/joey/.venv/bin/activate
+# System
+alias rr="rm -rvf"
+alias g="grep"
+alias cat="bat --style=plain"
+alias ls="exa"
+alias ll="exa -lal"
+alias cd="z"
+alias tmux="tmux -u"
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-eval "$(zoxide init zsh)"
+# AI Tools
+alias xc="aichat"
+alias xx="aichat -e"
 
-[[ -s "/home/joey/.gvm/scripts/gvm" ]] && source "/home/joey/.gvm/scripts/gvm"
-export MODULAR_HOME="/home/joey/.modular"
-export PATH="/home/joey/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
+# Remote Access
+alias wvm="ssh joey@127.0.0.1 -p 2222"
 
-. "$HOME/.local/bin/env"
-export RUSTC_WRAPPER=$(which sccache)
+# Conda
+alias rc="conda deactivate && conda active base"
 
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/home/joey/.cache/lm-studio/bin"
-export PATH=/usr/local/cuda-12.6/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda-12.6/lib64:$LD_LIBRARY_PATH
-export PATH="$PATH:/usr/share/windsurf"
-export PATH="$PATH:/home/joey/.modular/bin"
+# Kitty-specific aliases
+if [[ -n "$KITTY_WINDOW_ID" ]]; then
+    alias ssh="kitten ssh"
+fi
 
+# ===========================================
+# Virtual Environment
+# ===========================================
+source "$HOME/.venv/bin/activate"
