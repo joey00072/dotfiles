@@ -230,7 +230,7 @@ install_rust_tools() {
     log_info "Installing Rust-based tools..."
     
     # List of tools to install
-    local tools=("zellij" "exa" "zoxide" "bat" "aichat" "atuin" "ripgrep", "sccache")
+    local tools=("zellij" "exa" "zoxide" "bat" "aichat" "atuin" "ripgrep" "sccache")
     
     for tool in "${tools[@]}"; do
         if ! command_exists "$tool"; then
