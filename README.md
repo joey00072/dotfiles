@@ -33,3 +33,8 @@ powerlevel10k/powerlevel10k is installed but not activated
 to change theme just edit ~/.zshrc <br/>
 `ZSH_THEME="powerlevel10k/powerlevel10k"`
 
+
+#### Zellij 
+```bash
+curl -L https://github.com/zellij-org/zellij/releases/latest/download/zellij-x86_64-unknown-linux-musl.tar.gz -o /tmp/zellij.tgz && tar -xzf /tmp/zellij.tgz -C /tmp && sudo mv /tmp/zellij /usr/local/bin/ && rm /tmp/zellij.tgz
+```
