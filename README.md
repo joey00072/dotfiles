@@ -18,7 +18,7 @@ sudo apt install git vim curl zsh
 ## Installation
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/joey00072/dotfiles/master/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/joey00072/dotfiles/master/install.sh)"
 ```
 
 ### change defalut shell to zsh
