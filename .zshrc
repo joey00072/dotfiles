@@ -190,7 +190,6 @@ alias g="grep"
 alias cat="bat --style=plain"
 alias ls="exa"
 alias ll="exa -lal"
-alias cd="z"
 alias tmux="tmux -u"
 
 # AI Tools
