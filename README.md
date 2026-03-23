@@ -38,3 +38,10 @@ to change theme just edit ~/.zshrc <br/>
 ```bash
 curl -L https://github.com/zellij-org/zellij/releases/latest/download/zellij-x86_64-unknown-linux-musl.tar.gz -o /tmp/zellij.tgz && tar -xzf /tmp/zellij.tgz -C /tmp && sudo mv /tmp/zellij /usr/local/bin/ && rm /tmp/zellij.tgz
 ```
+
+
+#### NVIM
+```
+curl -sL https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz \
+| sudo tar -xzf - --strip-components=1 --overwrite -C /usr
+```
